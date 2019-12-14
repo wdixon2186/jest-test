@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { counter: 0 };
     this.increment = this.increment.bind(this);
     this.decrement = this.decrement.bind(this);
@@ -17,9 +17,13 @@ class App extends Component {
   render() {
     return (
       <div data-test="component-app">
-        <h1>The count is {this.state.counter}</h1>
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
+        <h1 data-test="counter-display">The count is {this.state.counter}</h1>
+        <button data-test="increment-button" onClick={this.increment}>
+          +
+        </button>
+        <button data-test="decrement-button" onClick={this.decrement}>
+          -
+        </button>
       </div>
     );
   }
